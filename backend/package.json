@@ -4,11 +4,11 @@
   "main": "",
   "license": "MIT",
   "author": "Ricardo Casares (https://analogic.al)",
-  "homepage": "https://github.com/ricardocasares/mail#readme",
+  "homepage": "https://github.com/ricardocasares/tmpmail#readme",
   "description": "Temporary email backend",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ricardocasares/mail.git"
+    "url": "git+https://github.com/ricardocasares/tmpmail.git"
   },
   "scripts": {
     "dev": "nodemon -r dotenv/config index.js",
