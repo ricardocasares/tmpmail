@@ -19,4 +19,4 @@ express()
   .get("*", (_, res) =>
     res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"))
   )
-  .listen(3000, () => console.log("> Server started"));
+  .listen(3000, () => console.log("> Server started on http://localhost:3000"));
