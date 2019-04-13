@@ -30,7 +30,7 @@ export default ({
       setEmail(data);
       setLoading(false);
     });
-  }, [id, inbox]);
+  }, [id]);
 
   return (
     <Layout inbox={inbox}>
