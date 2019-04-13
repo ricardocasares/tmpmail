@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "tmp",
+  "env": {
+    "API": "@mailgun-api",
+    "KEY": "@mailgun-key",
+    "DOMAIN": "@mailgun-domain",
+    "STORAGE": "@mailgun-storage"
+  },
+  "builds": [
+    { "src": "backend/index.js", "use": "@now/node-server" },
+    { "src": "frontend/package.json", "use": "@now/static-build" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "backend/index.js" },
+    { "src": "/(.*).js", "dest": "frontend/$1.js" },
+    { "src": "/(.*).png", "dest": "frontend/$1.png" },
+    { "src": ".*", "dest": "frontend/index.html" }
+  ]
+}

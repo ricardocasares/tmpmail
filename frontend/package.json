@@ -1,0 +1,51 @@
+{
+  "name": "tmpmail-frontend",
+  "version": "0.0.0-sr",
+  "license": "MIT",
+  "author": "Ricardo Casares (https://analogic.al)",
+  "homepage": "https://github.com/ricardocasares/mail#readme",
+  "description": "Temporary email frontend",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardocasares/mail.git"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "now-build": "parcel build src/index.html",
+    "format": "npx prettier --write **/*.{js}"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/ricardocasares/mail/issues"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "unique-names-generator": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
