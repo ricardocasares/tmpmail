@@ -12,8 +12,7 @@
   },
   "scripts": {
     "dev": "nodemon -r dotenv/config index.js",
-    "start": "node index.js",
-    "format": "npx prettier --write **/*.{js}"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.16.4",
