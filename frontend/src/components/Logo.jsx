@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 import { Mail } from "./Icons";
 
 const Logo = styled(Mail)`
-  fill: #ffdd63;
-  stroke: #b59c44;
-  stroke-width: 1.5;
+  stroke: ${({ color = "#b59c44" }) => color};
+  fill: ${({ fill = "#ffdd63" }) => fill};
+  stroke-width: ${({ stroke = 3 }) => stroke};
 `;
 
 export default Logo;

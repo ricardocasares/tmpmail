@@ -6,7 +6,7 @@ const Icon = styled.svg`
   fill: ${({ fill = "none" }) => fill};
   stroke-linecap: ${({ cap = "round" }) => cap};
   stroke-linejoin: ${({ line = "round" }) => line};
-  stroke-width: ${({ width = 2 }) => width};
+  stroke-width: ${({ stroke = 2 }) => stroke};
   width: ${({ size = 18 }) => `${size}px`};
   height: ${({ size = 18 }) => `${size}px`};
 `;

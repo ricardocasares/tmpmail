@@ -20,7 +20,7 @@ const Header = styled.header`
 export default ({ inbox }) => (
   <Header>
     <Link to="/">
-      <Logo size={"32"} color="#666" />
+      <Logo size={32} />
     </Link>{" "}
     {inbox && (
       <Link data-inbox-link to={`/${inbox}`}>
