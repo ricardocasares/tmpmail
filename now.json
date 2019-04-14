@@ -15,6 +15,7 @@
     { "src": "/api/(.*)", "dest": "backend/index.js" },
     { "src": "/(.*).js", "dest": "frontend/$1.js" },
     { "src": "/(.*).png", "dest": "frontend/$1.png" },
+    { "src": "/report.html", "dest": "frontend/report.html" },
     { "src": ".*", "dest": "frontend/index.html" }
   ]
 }
