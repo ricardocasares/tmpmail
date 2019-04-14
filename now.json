@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "tmp",
+  "alias": "tmpmail.analogic.al",
   "env": {
     "API": "@mailgun-api",
     "KEY": "@mailgun-key",
