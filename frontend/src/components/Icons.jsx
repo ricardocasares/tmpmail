@@ -11,12 +11,6 @@ const Icon = styled.svg`
   height: ${({ size = 18 }) => `${size}px`};
 `;
 
-export const Trash = props => (
-  <Icon {...props} viewBox="0 0 32 32">
-    <path d="M28 6 L6 6 8 30 24 30 26 6 4 6 M16 12 L16 24 M21 12 L20 24 M11 12 L12 24 M12 6 L13 2 19 2 20 6" />
-  </Icon>
-);
-
 export const Mail = props => (
   <Icon {...props} viewBox="0 0 32 32">
     <path d="M2 26 L30 26 30 6 2 6 Z M2 6 L16 16 30 6" />
@@ -39,11 +33,5 @@ export const Clock = props => (
 export const Square = props => (
   <Icon viewBox="0 0 32 32" {...props}>
     <path d="M4 12 L4 4 12 4 M20 4 L28 4 28 12 M4 20 L4 28 12 28 M28 20 L28 28 20 28" />
-  </Icon>
-);
-
-export const Reload = props => (
-  <Icon viewBox="0 0 32 32" {...props}>
-    <path d="M29 16 C29 22 24 29 16 29 8 29 3 22 3 16 3 10 8 3 16 3 21 3 25 6 27 9 M20 10 L27 9 28 2" />
   </Icon>
 );
