@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { agoFromString } from "../lib/time";
 import Box from "../components/Box";
 import Entry from "../components/Entry";
 import Loading from "../components/Loading";
@@ -7,7 +6,7 @@ import Message from "../components/Message";
 import { message } from "../lib/api";
 import Layout, { Container } from "../components/Layout";
 
-export default ({
+export const Email = ({
   match: {
     params: { inbox, id }
   }
@@ -50,3 +49,5 @@ export default ({
     </Layout>
   );
 };
+
+export default Email;

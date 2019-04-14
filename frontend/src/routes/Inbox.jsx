@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { messages } from "../lib/api";
-import { fromEpoch } from "../lib/time";
 import Box from "../components/Box";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
@@ -8,7 +7,7 @@ import Empty from "../components/Empty";
 import Entry from "../components/Entry";
 import { List, Item } from "../components/List";
 
-export default ({
+export const Inbox = ({
   match: {
     params: { inbox }
   }
@@ -52,3 +51,5 @@ export default ({
     </Layout>
   );
 };
+
+export default Inbox;
