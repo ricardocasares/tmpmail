@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { messages } from "../lib/api";
 import { fromEpoch } from "../lib/time";
+import Box from "../components/Box";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Empty from "../components/Empty";
@@ -10,19 +11,19 @@ import { List, Item } from "../components/List";
 export default ({
   match: {
     params: { inbox }
-  },
-  history
+  }
 }) => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-
-    messages(inbox).then(data => {
-      setList(data);
-      setLoading(false);
-    });
+    messages(inbox)
+      .then(data => {
+        setList(data);
+        setLoading(false);
+      })
+      .finally(() => setLoading(false));
   }, [inbox]);
 
   return (
@@ -33,14 +34,16 @@ export default ({
         <List>
           {list.map(({ id, from, subject, timestamp }, i) => (
             <Item key={id}>
-              <Entry
-                id={id}
-                date={fromEpoch(timestamp)}
-                href={`/${inbox}/messages/${id}`}
-                from={from}
-                subject={subject}
-                onDelete={() => ({})}
-              />
+              <Box p={10}>
+                <Entry
+                  id={id}
+                  date={fromEpoch(timestamp)}
+                  href={`/${inbox}/messages/${id}`}
+                  from={from}
+                  subject={subject}
+                  onDelete={() => ({})}
+                />
+              </Box>
             </Item>
           ))}
         </List>

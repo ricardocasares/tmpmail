@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from "react";
-import styled from "@emotion/styled";
+import { agoFromString } from "../lib/time";
+import Box from "../components/Box";
 import Entry from "../components/Entry";
 import Loading from "../components/Loading";
 import Message from "../components/Message";
 import { message } from "../lib/api";
 import Layout, { Container } from "../components/Layout";
-
-const PaddedEntry = styled(Entry)`
-  padding: 10px 0;
-  border-bottom: none;
-  margin-top: 20px;
-
-  :hover {
-    background: initial;
-  }
-`;
 
 export default ({
   match: {
@@ -26,10 +17,12 @@ export default ({
 
   useEffect(() => {
     setLoading(true);
-    message(id).then(data => {
-      setEmail(data);
-      setLoading(false);
-    });
+    message(id)
+      .then(data => {
+        setEmail(data);
+        setLoading(false);
+      })
+      .finally(() => setLoading(false));
   }, [id]);
 
   return (
@@ -37,14 +30,15 @@ export default ({
       {loading && <Loading />}
       <Container>
         {!loading && email && (
-          <PaddedEntry
-            id={email.id}
-            date={email.date}
-            href={`/${inbox}/messages/${id}`}
-            from={email.from}
-            subject={email.subject}
-            onDelete={() => ({})}
-          />
+          <Box pt={10} pb={10}>
+            <Entry
+              id={email.id}
+              date={email.date}
+              href={`/${inbox}/messages/${id}`}
+              from={email.from}
+              subject={email.subject}
+            />
+          </Box>
         )}
         {!loading && email && (
           <Message

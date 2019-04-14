@@ -1,20 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
-
+import { agoFromString } from "../lib/time";
 import Link from "./Link";
-import Grid from "./Grid";
-import Button from "./Button";
-import { Trash } from "./Icons";
 
 export const Entry = styled.div`
   display: grid;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  transition: background 0.3s;
-
-  :hover {
-    background: #eee;
-  }
 
   h2,
   h3 {
@@ -35,7 +25,7 @@ export const Entry = styled.div`
   }
 `;
 
-export default ({ href, from, subject, date, onDelete, className }) => (
+export default ({ href, from, subject, date, className }) => (
   <Entry className={className}>
     <h2>
       <Link data-link-to-message to={href}>
@@ -43,7 +33,7 @@ export default ({ href, from, subject, date, onDelete, className }) => (
       </Link>
     </h2>
     <h3>
-      {from}, {date}
+      {from}, <span title={date}>{agoFromString(date)}</span>
     </h3>
   </Entry>
 );

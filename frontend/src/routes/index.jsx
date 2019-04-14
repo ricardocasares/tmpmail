@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Layout from "../components/Layout";
 import Home from "./Home";
 import Inbox from "./Inbox";
 import Message from "./Message";
