@@ -1,4 +1,5 @@
 const fetch = require("isomorphic-unfetch");
+const fromEpoch = require("../lib/time");
 const { API, KEY, DOMAIN, STORAGE } = require("../config");
 
 const AUTH = `api:${KEY}`;
@@ -12,12 +13,12 @@ const endpoint = domain => `https://${AUTH}@${domain}${VERSION}`;
 const byRecipient = inbox => ({ recipient }) => recipient === inbox;
 
 const toKeyFields = ({
-  timestamp,
+  timestamp: date,
   storage: { key: id },
   message: {
     headers: { from, subject }
   }
-}) => ({ id, from, subject, timestamp });
+}) => ({ id, from, subject, date: fromEpoch(date) });
 
 const toMessage = ({
   from,

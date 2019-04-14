@@ -32,12 +32,12 @@ export default ({
       {!loading && !list.length && <Empty />}
       {!loading && !!list.length && (
         <List>
-          {list.map(({ id, from, subject, timestamp }, i) => (
+          {list.map(({ id, from, subject, date }, i) => (
             <Item key={id}>
               <Box p={10}>
                 <Entry
                   id={id}
-                  date={fromEpoch(timestamp)}
+                  date={date}
                   href={`/${inbox}/messages/${id}`}
                   from={from}
                   subject={subject}
