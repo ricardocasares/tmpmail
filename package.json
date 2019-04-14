@@ -9,10 +9,15 @@
     "type": "git",
     "url": "git+https://github.com/ricardocasares/tmpmail.git"
   },
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:backend": "cd backend/ && npm run dev",
-    "dev:frontend": "cd frontend/ && npm run dev",
+    "dev:backend": "yarn workspace backend run dev",
+    "dev:frontend": "yarn workspace frontend run dev",
     "format": "npx prettier --write **/*.{js}"
   },
   "husky": {
