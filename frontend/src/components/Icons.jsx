@@ -36,8 +36,14 @@ export const Clock = props => (
   </Icon>
 );
 
-export const Alert = props => (
+export const Square = props => (
   <Icon viewBox="0 0 32 32" {...props}>
     <path d="M4 12 L4 4 12 4 M20 4 L28 4 28 12 M4 20 L4 28 12 28 M28 20 L28 28 20 28" />
+  </Icon>
+);
+
+export const Reload = props => (
+  <Icon viewBox="0 0 32 32" {...props}>
+    <path d="M29 16 C29 22 24 29 16 29 8 29 3 22 3 16 3 10 8 3 16 3 21 3 25 6 27 9 M20 10 L27 9 28 2" />
   </Icon>
 );

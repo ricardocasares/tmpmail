@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import random from "../lib/random";
 import { keyframes } from "@emotion/core";
 import { Clock } from "./Icons";
 
@@ -24,14 +25,30 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #eee;
-  opacity: 0.5;
+  opacity: 1;
 `;
+
+const labels = [
+  "Wait for it...",
+  "It's coming...",
+  "It's gonna be awesome...",
+  "Do we know from somewhere?",
+  "Idziemy na piwo!",
+  "Almost there...",
+  "Kurwa mać!",
+  "I almost can see it!",
+  "Maybe some coffe?",
+  "может быть чай?",
+  "Una cerveza por favor!"
+];
 
 export default () => (
   <Container>
     <Indicator size={96} />
+    <p>{random(labels)}</p>
   </Container>
 );

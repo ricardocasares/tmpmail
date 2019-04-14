@@ -15,6 +15,7 @@ export default ({
 }) => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [timestamp, setTimestamp] = useState(new Date());
 
   useEffect(() => {
     setLoading(true);
@@ -24,12 +25,12 @@ export default ({
         setLoading(false);
       })
       .finally(() => setLoading(false));
-  }, [inbox]);
+  }, [inbox, timestamp]);
 
   return (
     <Layout inbox={inbox}>
       {loading && <Loading />}
-      {!loading && !list.length && <Empty />}
+      {!loading && !list.length && <Empty refresh={setTimestamp} />}
       {!loading && !!list.length && (
         <List>
           {list.map(({ id, from, subject, date }, i) => (
