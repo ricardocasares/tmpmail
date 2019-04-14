@@ -41,7 +41,7 @@ const labels = [
   "Almost there...",
   "Kurwa mać!",
   "I almost can see it!",
-  "Maybe some coffe?",
+  "Maybe some coffee?",
   "может быть чай?",
   "Una cerveza por favor!"
 ];
